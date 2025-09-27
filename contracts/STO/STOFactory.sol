@@ -81,7 +81,7 @@ contract STOFactory is Ownable {
         require(isValidIndustry(industry), "Invalid industry");
 
         // Transfer RWA token to 3rd party Custody
-        // IToken(rwaToken).transferFrom(msg.sender, custodyAddress, initialSupply);
+        IToken(rwaToken).transferFrom(msg.sender, custodyAddress, initialSupply);
 
         // Create wrapped RWA token
         WETH wrappedToken = new WETH(stoTokenName, stoTokenSymbol, address(this), initialSupply);

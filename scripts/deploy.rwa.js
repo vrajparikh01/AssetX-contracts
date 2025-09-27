@@ -130,7 +130,7 @@ async function deployFullSuite() {
   const agentManager = await ethers.deployContract('AgentManager', [token.address], tokenAgent);
   console.log("AgentManager deployed to:", agentManager.address);
 
-  const claimIssuerContract = await ethers.deployContract('ClaimIssuerDexReal', [claimIssuer.address], claimIssuer);
+  const claimIssuerContract = await ethers.deployContract('ClaimIssuerAssetX', [claimIssuer.address], claimIssuer);
   console.log("ClaimIssuer deployed to:", claimIssuerContract.address);
 
   return {
