@@ -46,7 +46,6 @@ describe("Launchpad: STO successfully raising greater than softcap", function ()
 
     it("List STO on launchpad", async function () {
         const stoContract = await ethers.getContractAt("WETH", stoAddress);
-        console.log("hellooo", ethers.utils.parseEther("10000000"))
         await stoContract.connect(deployer).approve(launchpadContract.address, ethers.utils.parseEther("10000000"));
 
         const stoDetails = {
@@ -71,7 +70,7 @@ describe("Launchpad: STO successfully raising greater than softcap", function ()
             country: "country",
             industry: "industry",
             investmentType: "investmentType",
-            image: "image",
+            image: "image"
         }
         await launchpadContract.connect(deployer).listSTO(stoDetails, stoInfo);
     })
@@ -191,6 +190,7 @@ describe("Launchpad: STO failed to raise fund greater than softcap", function ()
             country: "country",
             industry: "industry",
             investmentType: "investmentType",
+            image: "image"
         }
         await launchpadContract.connect(deployer).listSTO(stoDetails, stoInfo);
 
