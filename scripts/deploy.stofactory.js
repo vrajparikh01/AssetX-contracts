@@ -6,15 +6,25 @@ async function sto(shouldVerify = false) {
 
     [custodyAddress, addr1] = await ethers.getSigners();
 
-    const WETH = await ethers.getContractFactory("WETH");
-    const weth = await WETH.deploy("WETH", "WETH", custodyAddress.address , ethers.utils.parseEther("10000000"));
-    await weth.deployed();
-    console.log("WETH deployed to:", weth.address);
+    // const WETH = await ethers.getContractFactory("WETH");
+    // const weth = await WETH.deploy("WETH", "WETH", custodyAddress.address , ethers.utils.parseEther("10000000"));
+    // await weth.deployed();
+    // console.log("WETH deployed to:", weth.address);
 
-    const RWA = await ethers.getContractFactory("RWA");
-    const rwa = await RWA.deploy("RWA", "RWA", custodyAddress.address , ethers.utils.parseEther("10000000"));
-    await rwa.deployed();
-    console.log("RWA deployed to:", rwa.address);
+    // const RWA = await ethers.getContractFactory("RWA");
+    // const rwa = await RWA.deploy("RWA", "RWA", custodyAddress.address , ethers.utils.parseEther("10000000"));
+    // await rwa.deployed();
+    // console.log("RWA deployed to:", rwa.address);
+
+    const USDC = await ethers.getContractFactory("USDC");
+    const usdc = await USDC.deploy();
+    await usdc.deployed();
+    console.log("USDC deployed to:", usdc.address);
+
+    // const USDT = await ethers.getContractFactory("USDT");
+    // const usdt = await USDT.deploy();
+    // await usdt.deployed();
+    // console.log("USDT deployed to:", usdt.address);
 
     const Stofactory = await ethers.getContractFactory("STOFactory");
     const stofactory = await Stofactory.deploy(custodyAddress.address);
@@ -46,10 +56,10 @@ async function sto(shouldVerify = false) {
     }
 }
 
-// sto(true).catch((error) => {
-//   console.error(error);
-//   process.exitCode = 1;
-// });
+sto(false).catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 
 module.exports = {
     sto,

@@ -25,10 +25,10 @@ async function launchpad(shouldVerify = false) {
     }
 }
 
-// launchpad(true).catch((error) => {
-//   console.error(error);
-//   process.exitCode = 1;
-// });
+launchpad(true).catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 
 module.exports = {
     launchpad

@@ -5,7 +5,7 @@ async function stoswap() {
   let feetoSetter = "0xfEceA7b046b4DaFACE340c7A2fe924cf41b6d274";
 
   const UniswapV2Pair = await ethers.getContractFactory("UniswapV2Pair");
-  const uniswapv2pair = await UniswapV2Pair.deploy({ gasLimit: 5000000 });
+  const uniswapv2pair = await UniswapV2Pair.deploy();
   await uniswapv2pair.deployed();
   console.log("UniswapV2Pair deployed to:", uniswapv2pair.address);
 
@@ -15,7 +15,7 @@ async function stoswap() {
   console.log("UniswapV2Factory deployed to:", uniswapV2Factory.address);
 
   const WETH = await ethers.getContractFactory("WETH9");
-  const weth = await WETH.deploy({ gasLimit: 5000000 });
+  const weth = await WETH.deploy();
   await weth.deployed();
   console.log("WETH deployed to:", weth.address);
 
@@ -52,10 +52,10 @@ async function stoswap() {
   };
 }
 
-// stoswap().catch((error) => {
-//   console.error(error);
-//   process.exitCode = 1;
-// });
+stoswap().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 
 module.exports = {
   stoswap,

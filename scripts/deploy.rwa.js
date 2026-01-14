@@ -198,10 +198,10 @@ async function deployComplianceFixture() {
   };
 }
 
-// deployFullSuite().catch((error) => {
-//   console.error(error);
-//   process.exitCode = 1;
-// });
+deployFullSuite().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 
 module.exports = {
   deployIdentityProxy,
