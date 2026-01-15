@@ -17,15 +17,6 @@ The contracts implement:
 
 ---
 
-## 🌐 Multi-Chain Deployment
-
-We are applying for 3 partner prizes which are:
-- **Kadena** – Used for high-throughput deployment and secure, gas-efficient contract execution. 
-- **Integra** - For regulatory compliance and identity verification.  
-- **Rootstock (RSK)** – Used for Bitcoin-sidechain compatibility, enabling BTC liquidity to flow into AssetX. 
-
----
-
 ## ⚙️ Tech Stack
 
 - Solidity (smart contracts)
@@ -81,9 +72,11 @@ In a new terminal, run:
 npx hardhat run scripts/deploy.launchpad.js --network localhost
 ```
 
-### 6️⃣ Deploy to Kadena Testnet
+### 6️⃣ Deploy to Testnet
+We have deployed contracts on Mantle Sepolia and Arbitrum Sepolia testnets.
 ```bash
-npx hardhat run scripts/deploy.stofactory.js --network kadena
+npx hardhat run scripts/deploy.stofactory.js --network mantle_sepolia
+npx hardhat run scripts/deploy.stofactory.js --network arbitrum_sepolia
 ```
 
 ## 🔒 Compliance & Security
