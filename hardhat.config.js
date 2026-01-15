@@ -8,6 +8,18 @@ module.exports = {
   etherscan: {
     apiKey: CONFIG.SCAN_API_KEY,
   },
+  chainDescriptors: {
+    5003: {
+      name: "mantle_sepolia",
+      blockExplorers: {
+        etherscan: {
+          name: "Mantle Sepolia Explorer",
+          url: "https://sepolia.mantlescan.xyz/",
+          apiUrl: "https://sepolia.mantlescan.xyz/api",
+        },
+      }
+    }
+   },
   solidity: {
     compilers: [
       {
@@ -56,7 +68,12 @@ module.exports = {
       url: CONFIG.RPC_URL || "",
       accounts: [CONFIG.ACCOUNT_PRIVATE_KEY || defaultKey],
     },
-    kadena:{
+    arbitrum_sepolia: {
+      url: CONFIG.RPC_URL || "",
+      accounts: [CONFIG.ACCOUNT_PRIVATE_KEY || defaultKey],
+    },
+    mantle_sepolia: {
+      chainId: 5003,
       url: CONFIG.RPC_URL || "",
       accounts: [CONFIG.ACCOUNT_PRIVATE_KEY || defaultKey],
     },

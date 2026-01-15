@@ -6,6 +6,8 @@ const SEPOLIA_CONFIG = require("./sepolia.config");
 const MAINNET_CONFIG = require("./mainnet.config");
 const BASE_MAINNET_CONFIG = require("./base.config");
 const KADENA_CONFIG = require("./kadena.config");
+const ARBITRUM_SEPOLIA_CONFIG = require("./arbitrum-sepolia.config");
+const MANTLE_SEPOLIA_CONFIG = require("./mantle-sepolia.config");
 
 let EXPORT_CONFIG;
 
@@ -20,6 +22,12 @@ else if(process.env.NETWORK == "base"){
 }
 else if(process.env.NETWORK == "kadena"){
     EXPORT_CONFIG = KADENA_CONFIG;
+}
+else if(process.env.NETWORK == "arbitrum_sepolia"){
+    EXPORT_CONFIG = ARBITRUM_SEPOLIA_CONFIG;
+}
+else if(process.env.NETWORK == "mantle_sepolia"){
+    EXPORT_CONFIG = MANTLE_SEPOLIA_CONFIG;
 }
 else{
     EXPORT_CONFIG = {
